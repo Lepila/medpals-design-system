@@ -1,0 +1,257 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+
+  /* Brand Colors - Medical Professional Theme */
+  --background: #f5f2ed;
+  --foreground: #17354f;
+
+  --card: #ffffff;
+  --card-foreground: #17354f;
+
+  --popover: #ffffff;
+  --popover-foreground: #17354f;
+
+  /* Primary - Denim Blue */
+  --primary: #005ab5;
+  --primary-foreground: #ffffff;
+
+  /* Secondary - Teal */
+  --secondary: #008080;
+  --secondary-foreground: #ffffff;
+
+  /* Accent - Uranian Blue */
+  --accent: #a7cced;
+  --accent-foreground: #17354f;
+
+  --muted: #f1f2f6;
+  --muted-foreground: #6a6a6a;
+
+  --destructive: #d32f2f;
+  --destructive-foreground: #ffffff;
+
+  --border: rgba(0, 90, 181, 0.15);
+  --input: transparent;
+  --input-background: #ffffff;
+  --switch-background: #e0e0e0;
+
+  --font-weight-medium: 600;
+  --font-weight-normal: 400;
+
+  --ring: #005ab5;
+
+  /* Brand Chart Colors */
+  --chart-1: #005ab5;
+  --chart-2: #008080;
+  --chart-3: #a7cced;
+  --chart-4: #075d5d;
+  --chart-5: #1e192d;
+
+  /* Soft Rounded Radius */
+  --radius: 1.25rem;
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #17354f;
+  --sidebar-primary: #005ab5;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f1f2f6;
+  --sidebar-accent-foreground: #17354f;
+  --sidebar-border: rgba(0, 90, 181, 0.15);
+  --sidebar-ring: #005ab5;
+
+  /* Typography Scale - Accessible & Readable */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.5rem;
+  --text-4xl: 3rem;
+}
+
+.dark {
+  /* Professional dark mode with brand colors */
+  --background: #1e192d;
+  --foreground: #f1f2f6;
+
+  --card: #2a2538;
+  --card-foreground: #f1f2f6;
+
+  --popover: #2a2538;
+  --popover-foreground: #f1f2f6;
+
+  --primary: #a7cced;
+  --primary-foreground: #1e192d;
+
+  --secondary: #008080;
+  --secondary-foreground: #ffffff;
+
+  --accent: #005ab5;
+  --accent-foreground: #ffffff;
+
+  --muted: #3a3545;
+  --muted-foreground: #b5b5c0;
+
+  --destructive: #ef5350;
+  --destructive-foreground: #ffffff;
+
+  --border: rgba(167, 204, 237, 0.2);
+  --input: rgba(167, 204, 237, 0.1);
+  --ring: #a7cced;
+
+  --font-weight-medium: 600;
+  --font-weight-normal: 400;
+
+  --chart-1: #a7cced;
+  --chart-2: #008080;
+  --chart-3: #005ab5;
+  --chart-4: #075d5d;
+  --chart-5: #6a9bc3;
+
+  --sidebar: #2a2538;
+  --sidebar-foreground: #f1f2f6;
+  --sidebar-primary: #a7cced;
+  --sidebar-primary-foreground: #1e192d;
+  --sidebar-accent: #3a3545;
+  --sidebar-accent-foreground: #f1f2f6;
+  --sidebar-border: rgba(167, 204, 237, 0.2);
+  --sidebar-ring: #a7cced;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  */
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+
+  p {
+    line-height: 1.625;
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
+}
